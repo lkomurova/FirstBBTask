@@ -1,0 +1,135 @@
+<template>
+    <!--<lightning-accordion active-section-name="" allow-multiple-sections-open>
+        <lightning-accordion-section name="A" label="Menu Items">-->
+    <!--<div class={checkClass} onclick={checks}>
+       <span><lightning-icon icon-name="utility:task"></lightning-icon></span>
+       Files Requested
+       <template if:true={count1}>
+           <div class="numberCircle">{requestedCount}</div>
+       </template>
+   </div>-->
+<template if:false={showMenuExpanded}>
+   <div class="leftSideMenuClass">
+       <div class="slds-p-around_medium">
+       <lightning-button-icon
+            icon-name="utility:task"
+            variant="bare"            
+            alternative-text="Files"
+            size="large"
+            name="files"
+        >    
+        </lightning-button-icon>
+        </div>
+        <div class="slds-p-around_medium">
+        <lightning-button-icon
+            icon-name="utility:chat"
+            variant="bare"            
+            alternative-text="Message"
+            size="large"
+            name="message"
+        >
+        </lightning-button-icon>
+        </div>
+        <div class="slds-p-around_medium">
+        <lightning-button-icon
+                icon-name="utility:user"
+                variant="bare"                
+                alternative-text="Portal"
+                size="large"
+                name="portal"
+        >
+        </lightning-button-icon>
+        </div>
+        <div class="slds-p-around_medium">
+        <lightning-button-icon
+            icon-name="utility:forward"
+            variant="bare"
+            onclick={handleClickForward}
+            alternative-text="expand"
+            size="large"
+            name="expand"
+        >
+        </lightning-button-icon>
+        </div>
+   </div>
+</template>
+   <template if:true={showMenuExpanded}>
+   
+        <div class={checkFileClass}> 
+            <lightning-button-icon
+            icon-name="utility:task"
+            variant="bare"            
+            alternative-text="Files"
+            onclick={handleClick}
+            size="large"
+            name="files"
+        >
+        </lightning-button-icon>                       
+            &nbsp;&nbsp;Files Requested
+            <template if:true={count1}>
+                <div class="numberCircle">{requestedCount}</div>
+            </template>
+        
+        </div>        
+    
+        
+        <div class={checkMessageClass}> 
+            <lightning-button-icon
+            icon-name="utility:chat"
+            variant="bare"            
+            alternative-text="Message"
+            onclick={handleClick}
+            size="large"
+            name="message"
+        >
+        </lightning-button-icon>               
+            &nbsp;&nbsp;Message Center
+            <template if:true={count3}>
+                <div class="numberCircle">{messageCount}</div>
+            </template>                
+        </div>
+    
+        
+        <div class={checkPortalClass}>  
+            <lightning-button-icon
+                icon-name="utility:user"
+                variant="bare"                
+                alternative-text="Portal"
+                onclick={handleClick}
+                size="large"
+                name="portal"
+            >             
+            </lightning-button-icon>         
+            &nbsp;&nbsp;Portal Users            
+        </div>        
+
+        <div class="slds-p-left_medium"> 
+            <lightning-button-icon
+            icon-name="utility:back"
+            variant="bare"
+            onclick={handleClickForward}
+            alternative-text="Files"
+            size="large"
+            name="collapse"
+        >
+        </lightning-button-icon>                                   
+        
+        </div>
+
+    </template>
+   <!--<div class={messClass} onclick={messages}>
+       <span><lightning-icon icon-name="utility:chat"></lightning-icon></span>
+       Message Center
+       <template if:true={count3}>
+           <div class="numberCircle">{messageCount}</div>
+       </template>
+   </div>
+   <template if:false={portal}>
+       <div class={userClass} onclick={user}>
+           <span><lightning-icon icon-name="utility:user"></lightning-icon></span>
+           Portal Users
+       </div>
+   </template>-->
+   <!--</lightning-accordion-section>
+        </lightning-accordion>-->
+</template>
